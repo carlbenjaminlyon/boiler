@@ -13,3 +13,4 @@
 # misc
 
 .env
+./public/dist/bundle.js
