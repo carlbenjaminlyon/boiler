@@ -1,9 +1,13 @@
 //Database
 const { Sequelize, DataTypes, DECIMAL } = require('sequelize');
 
-const User, Restaurant, Users_restaurants = require('./models');
+const User = require('./models/UserModel');
+const Restaurant = require('./models/RestaurantModel');
+const Users_restaurants = require('./models/Joined');
 
-//
+
+console.log(User);
+
 const db = new Sequelize({
   host: 'localhost',
   dialect: 'mysql',
@@ -13,8 +17,12 @@ const db = new Sequelize({
 });
 
 
-module.exports = db;
-
+module.exports = {
+  db: db,
+  User,
+  Restaurant,
+  Users_restaurants
+};
 
 
 
