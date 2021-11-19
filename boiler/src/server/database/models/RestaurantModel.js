@@ -32,4 +32,6 @@ const Restaurant = db.define('Restaurant', {
 //Func to add to this table
 //CRUD ops for Restaurants
 
-module.exports = Restaurant;
+module.exports = {
+  Restaurant: Restaurant,
+};

@@ -18,8 +18,8 @@ const User = db.define('User', {
 });
 
 //CRUD ops for Users
-//Find
-//FindOne
-//whateverelse
+module.exports = {
+  User: User,
+}
 
-module.exports = User;
+// module.exports = new User();
