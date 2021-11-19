@@ -1,5 +1,5 @@
 //Database
-const { Sequelize } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 
 //
 const sequelize = new Sequelize({
@@ -12,8 +12,20 @@ const sequelize = new Sequelize({
 
 //Schema Declaration
 const Boiler = sequelize.define('Boiler', {
-
+  id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  description: DataTypes.STRING(255),
+  priority: { type: DataTypes.INTEGER, defaultValue: 2 },
 });
+
+module.exports = {
+  db: sequelize,
+  Boiler,
+};
 
 /*
 Schema: {
