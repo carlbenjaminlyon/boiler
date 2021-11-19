@@ -2,7 +2,9 @@
 
 const path = require('path');
 const express = require('express');
+const dotenv = require('dotenv');
 
+dotenv.config({ path: '../.env' });
 // const { DBName } = require('./db');
 const distPath = path.resolve(__dirname, '...', 'dist');
 
