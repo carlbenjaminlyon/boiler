@@ -20,12 +20,47 @@ app.use(express.static(distPath));
 ////Server Routing////
 
 //GET
+app.get('/api/restaurants', (req, res) => {
+  Restaurant.findAll()
+    .then(({data}) => {
+      res.status(200).send(data);
+    })
+    .catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
 
 //POST
+// adds a user
+app.post('/api/users', (req, res) => {
+  const {name, emailAddress, latitude, longitude} = req.body;
+  User.create({
+    username: name,
+    email: emailAddress,
+    lat: latitude,
+    long: longitude
+  }).then(() => {
+    res.sendStatus(201);
+  }).catch(err => {
+    console.error(err);
+    res.sendStatus(500);
+  });
+});
 
 //PUT
 
 //DELETE
+app.delete('/api/restaurants/:id', (req, res) => {
+  Restaurant.destroy({ where: { id: req.params.id }})
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
 
 //connection query
 
