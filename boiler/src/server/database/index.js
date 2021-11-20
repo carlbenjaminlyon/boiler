@@ -34,8 +34,8 @@ const User = db.define('User', {
   },
   username: DataTypes.STRING(255),
   email: DataTypes.STRING(255),
-  lat: DataTypes.DECIMAL(3, 6),
-  long: DataTypes.DECIMAL(3, 6),
+  lat: DataTypes.DECIMAL(9, 6),
+  long: DataTypes.DECIMAL(9, 6),
 });
 
 /**
@@ -55,14 +55,14 @@ const Restaurant = db.define('Restaurant', {
   price: DataTypes.DECIMAL(4, 2),
   address: DataTypes.STRING(255),
   lat: {
-    type: DataTypes.DECIMAL(3, 6),
+    type: DataTypes.DECIMAL(9, 6),
     allowNull: false
   },
   long: {
-    type: DataTypes.DECIMAL(3, 6)
+    type: DataTypes.DECIMAL(9, 6)
   },
   yelpRating: DataTypes.DECIMAL(1, 1),
-  userRating: DataTypes.DECIMAL(1, 4),
+  userRating: DataTypes.DECIMAL(5, 4),
   reviewCount: {
     type: DataTypes.INTEGER,
   },
@@ -80,7 +80,14 @@ Restaurant.belongsToMany(User, { through: Users_restaurants });
 
 mysql.createConnection({ user: 'root', password: '', })
 .then((db) => db.query('CREATE DATABASE IF NOT EXISTS `boiler`').then(() => db.end()))
-.then(() => console.log('\x1b[33m', '\nDatabase (MySQL): \'boiler\' successfully created!'));
+.then(() => console.log('\x1b[33m', '\nDatabase (MySQL): \'boiler\' successfully created!'))
+.then(() => User.sync())
+.then(() => console.log('\x1b[36m', '\nDatabase (MySQL): \'User\' table successfully created!'))
+.then(() => Restaurant.sync())
+.then(() => console.log('\x1b[36m', '\nDatabase (MySQL): \'Restaurant\' table successfully created!'))
+.then(() => Users_restaurants.sync({ force: true }))
+.then(() => console.log('\x1b[36m', '\nDatabase (MySQL): \'Users_restaurants\' table successfully created!'))
+.catch(err => console.log(':(', err));
 
 module.exports = {
   db: db,
