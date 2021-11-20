@@ -1,7 +1,9 @@
 //Model: Users
 
-const db = require('../index');
-const { DataTypes } = db;
+const { Sequelize, DataTypes } = require('sequelize');
+const db  = require('../index');
+
+// console.log("8888888888888888888888888888888888", db);
 
 //Model: User
 const User = db.define('User', {
@@ -17,9 +19,19 @@ const User = db.define('User', {
   long: DataTypes.DECIMAL(3, 6),
 });
 
+const getUser = () => {};
+const addUser = () => {};
+const deleteUser = () => {};
+const updateUser = () => {};
+
+
 //CRUD ops for Users
 module.exports = {
-  User: User,
+  User,
+  getUser: getUser,
+  addUser: addUser,
+  deleteUser: deleteUser,
+  updateUser: updateUser,
 }
 
 // module.exports = new User();

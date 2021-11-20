@@ -7,8 +7,9 @@ const PORT = 8080;
 dotenv.config({ path: '../.env' });
 // const { DBName } = require('./db');
 const distPath = path.resolve(__dirname, '...', 'dist');
+const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
 
-const db = require('./database');
+db.create
 
 const app = express();
 
@@ -30,16 +31,19 @@ app.use(express.static(distPath));
 
 //connection query
 
+app.listen(PORT, () => {
+  console.log(`
+  Listening at: http://127.0.0.1:${PORT}
+  `);
+});
 
-
-
-////Server Listener////
-initializeSchema({ connection: db })
-  .then(() => {
-    console.log('Initialized schema');
-    app.listen(PORT, () => console.info(`
-      Docs at http://127.0.0.1:${PORT}/__docs
-      Shortly is listening at http://127.0.0.1:${PORT}
-    `));
-  })
-  .catch((err) => console.error('Failed to initialize schema', err));
+// ////Server Listener////
+// initializeSchema({ connection: db })
+//   .then(() => {
+//     console.log('Initialized schema');
+//     app.listen(PORT, () => console.info(`
+//       Docs at http://127.0.0.1:${PORT}/__docs
+//       Shortly is listening at http://127.0.0.1:${PORT}
+//     `));
+//   })
+//   .catch((err) => console.error('Failed to initialize schema', err));
