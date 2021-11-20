@@ -9,8 +9,6 @@ dotenv.config({ path: '../.env' });
 const distPath = path.resolve(__dirname, '...', 'dist');
 const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
 
-db.create
-
 const app = express();
 
 app.use(express.json());
@@ -37,7 +35,7 @@ app.listen(PORT, () => {
   `);
 });
 
-// ////Server Listener////
+////Server Listener////
 // initializeSchema({ connection: db })
 //   .then(() => {
 //     console.log('Initialized schema');
