@@ -1,10 +1,10 @@
 //Server definition
-
 const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
-const PORT = 8080;
+// const PORT = 8080;
 dotenv.config({ path: '../.env' });
+const { PORT } = process.env;
 // const { DBName } = require('./db');
 const distPath = path.resolve(__dirname, '...', 'dist');
 const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
