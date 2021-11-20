@@ -70,7 +70,7 @@ const Users_restaurants = db.define('Users_restaurants', {}, {timestamps: false}
 User.belongsToMany(Restaurant, { through: Users_restaurants });
 Restaurant.belongsToMany(User, { through: Users_restaurants });
 
-mysql.createConnection({ user: 'root', password: '', })
+mysql.createConnection({ user: 'root', password: ''})
   .then((db) => db.query('CREATE DATABASE IF NOT EXISTS `boiler`').then(() => db.end()))
   .then(() => console.log('\x1b[33m', '\nDatabase (MySQL): \'boiler\' successfully created!'))
   .then(() => User.sync())

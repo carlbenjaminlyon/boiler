@@ -1,1 +1,0 @@
-const User, Restaurant, Users_restaurants = require('./');
