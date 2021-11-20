@@ -1,5 +1,5 @@
 const path = require('path');
-const SRC_DIR = path.resolve(__dirname, 'client');
+const SRC_DIR = path.resolve(__dirname, 'src/client');
 const DIST_DIR = path.resolve(__dirname, 'dist');
 
 module.exports = {

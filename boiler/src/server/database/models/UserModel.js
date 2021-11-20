@@ -3,9 +3,8 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const db  = require('../index');
 
-// console.log("8888888888888888888888888888888888", db);
-
 //Model: User
+
 const User = db.define('User', {
   id: {
     type: DataTypes.INTEGER,
