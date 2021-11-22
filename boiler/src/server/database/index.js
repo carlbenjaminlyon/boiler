@@ -77,7 +77,7 @@ mysql.createConnection({ user: 'root', password: ''})
   .then(() => console.log('\x1b[36m', '\nDatabase (MySQL): \'User\' table successfully created!'))
   .then(() => Restaurant.sync())
   .then(() => console.log('\x1b[36m', '\nDatabase (MySQL): \'Restaurant\' table successfully created!'))
-  .then(() => Users_restaurants.sync({ force: true }))
+  .then(() => Users_restaurants.sync())
   .then(() => console.log('\x1b[36m', '\nDatabase (MySQL): \'Users_restaurants\' table successfully created!'))
   .catch(err => console.log(':(', err));
 
