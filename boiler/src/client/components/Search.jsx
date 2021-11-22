@@ -4,11 +4,11 @@ import axios from 'axios';
 const Search = () => {
 
 
-return (
-  <div>
+  return (
+    <div>
     test
-  </div>
-)
+    </div>
+  );
 };
 
 export default Search;
