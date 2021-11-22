@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Typography, AppBar, CssBaseline, Toolbar, Container } from '@material-ui/core';
-//I want to import icons and additional useful stuff for this
+import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton } from '@material-ui/core';
+import MenuIcon from '@mui/icons-material/Menu';
 import '../styles/style.css';
 
 // Imports //
@@ -18,7 +18,16 @@ const App = () => {
       <CssBaseline />
       <AppBar position="relative">
         <Toolbar>
-            <Typography variant='h2' align='center'>
+          <IconButton
+            size='large'
+            edge='start'
+            color='inherit'
+            aria-label='menu'
+            sx={{ mr: 5 }}
+          />
+          <MenuIcon />
+
+            <Typography variant='h4' align='center'>
               Boiler!
             </Typography>
         </Toolbar>
@@ -28,6 +37,12 @@ const App = () => {
             <Container maxWidth="sm">
               <Typography variant='h4' color='textPrimary'>
                   <Weather />
+              </Typography>
+            </Container>
+        </div>
+        <div>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
                   <FavoritesList />
               </Typography>
             </Container>
