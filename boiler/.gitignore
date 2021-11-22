@@ -11,6 +11,6 @@
 
 
 # misc
-/config/keys.js
+config/keys.js
 .env
 ./public/dist/bundle.js
