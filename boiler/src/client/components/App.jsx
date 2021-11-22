@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // <<<<<<< HEAD
+=======
+>>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
 import React, { useState } from 'react';
 import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton } from '@material-ui/core';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -62,6 +65,7 @@ const App = () => {
 
 };
 
+<<<<<<< HEAD
 // =======
 // import React, { useState } from 'react';
 // import { Typography, AppBar, CssBaseline, Toolbar, Container } from '@material-ui/core';
@@ -111,4 +115,6 @@ const App = () => {
 // };
 
 // // >>>>>>> f3ab80f2231ac88db051baf70221a9b2fc955f03
+=======
+>>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
 export default App;
