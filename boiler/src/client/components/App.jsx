@@ -8,12 +8,19 @@ import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
 /////////////
 
+import Search from './Search.jsx';
+
 const App = () => {
   const [item] = useState(null);
 
 
 
   return (
+    <div>
+      <h1>Boiler</h1>
+      <Search />
+    </div>
+
     <>
       <CssBaseline />
       <AppBar position="relative">
