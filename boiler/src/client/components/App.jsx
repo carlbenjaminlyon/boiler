@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import React, { useState } from 'react';
 import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton } from '@material-ui/core';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -7,6 +7,7 @@ import '../styles/style.css';
 // Imports //
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
+import Events from './Events.jsx';
 /////////////
 
 const App = () => {
@@ -28,25 +29,32 @@ const App = () => {
           />
           <MenuIcon />
 
-            <Typography variant='h4' align='center'>
+          <Typography variant='h4' align='center'>
               Boiler!
-            </Typography>
+          </Typography>
         </Toolbar>
       </AppBar>
       <main>
         <div>
-            <Container maxWidth="sm">
-              <Typography variant='h4' color='textPrimary'>
-                  <Weather />
-              </Typography>
-            </Container>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              <Weather />
+            </Typography>
+          </Container>
         </div>
         <div>
-            <Container maxWidth="sm">
-              <Typography variant='h4' color='textPrimary'>
-                  <FavoritesList />
-              </Typography>
-            </Container>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              <FavoritesList />
+            </Typography>
+          </Container>
+        </div>
+        <div>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              <Events />
+            </Typography>
+          </Container>
         </div>
       </main>
     </>
@@ -54,53 +62,53 @@ const App = () => {
 
 };
 
-=======
-import React, { useState } from 'react';
-import { Typography, AppBar, CssBaseline, Toolbar, Container } from '@material-ui/core';
-//I want to import icons and additional useful stuff for this
-import '../styles/style.css';
+// =======
+// import React, { useState } from 'react';
+// import { Typography, AppBar, CssBaseline, Toolbar, Container } from '@material-ui/core';
+// //I want to import icons and additional useful stuff for this
+// import '../styles/style.css';
 
-// Imports //
-import Weather from './Weather.jsx';
-import FavoritesList from './FavoritesList.jsx';
-/////////////
+// // Imports //
+// import Weather from './Weather.jsx';
+// import FavoritesList from './FavoritesList.jsx';
+// /////////////
 
-import Search from './Search.jsx';
+// import Search from './Search.jsx';
 
-const App = () => {
-  const [item] = useState(null);
+// const App = () => {
+//   const [item] = useState(null);
 
 
 
-  return (
-    <div>
-      <h1>Boiler</h1>
-      <Search />
-    </div>
+//   return (
+//     <div>
+//       <h1>Boiler</h1>
+//       <Search />
+//     </div>
 
-    <>
-      <CssBaseline />
-      <AppBar position="relative">
-        <Toolbar>
-            <Typography variant='h2' align='center'>
-              Boiler!
-            </Typography>
-        </Toolbar>
-      </AppBar>
-      <main>
-        <div>
-            <Container maxWidth="sm">
-              <Typography variant='h4' color='textPrimary'>
-                  <Weather />
-                  <FavoritesList />
-              </Typography>
-            </Container>
-        </div>
-      </main>
-    </>
-  );
+//     <>
+//       <CssBaseline />
+//       <AppBar position="relative">
+//         <Toolbar>
+//             <Typography variant='h2' align='center'>
+//               Boiler!
+//             </Typography>
+//         </Toolbar>
+//       </AppBar>
+//       <main>
+//         <div>
+//             <Container maxWidth="sm">
+//               <Typography variant='h4' color='textPrimary'>
+//                   <Weather />
+//                   <FavoritesList />
+//               </Typography>
+//             </Container>
+//         </div>
+//       </main>
+//     </>
+//   );
 
-};
+// };
 
->>>>>>> f3ab80f2231ac88db051baf70221a9b2fc955f03
+// // >>>>>>> f3ab80f2231ac88db051baf70221a9b2fc955f03
 export default App;
