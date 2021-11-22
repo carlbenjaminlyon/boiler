@@ -91,6 +91,39 @@ app.post('/api/restaurants', (req, res) => {
 });
 
 //PUT
+// updates restaurant user ratings
+app.put('/api/restaurants/:id', (req, res) => {
+  const {userRating} = req.body;
+  const target = Restaurant.findByPk(req.params.id);
+  const newScore = target.userRating * target.reviewCount + userRating;
+  target.set({
+    userRating: newScore,
+  });
+  target.increment('reviewCount');
+  target.save()
+    .then(() => {
+      res.sendStatus(200);
+    })
+    .catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
+
+app.put('/api/restaurants', (req, res) => {
+  const {yelpRating, title} = req.body;
+  Restaurant.update({yelpRating: yelpRating}, {
+    where: {
+      title: title
+    }
+  })
+    .then(() => {
+      res.sendStatus(200);
+    }).catch(err => {
+      console.error(err);
+      res.sendStatus(500);
+    });
+});
 
 //DELETE
 app.delete('/api/restaurants/:id', (req, res) => {
