@@ -5,7 +5,9 @@ const Search = () => {
 
 
 return (
-
+  <div>
+    test
+  </div>
 )
 };
 
