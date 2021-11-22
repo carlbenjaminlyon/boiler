@@ -21,7 +21,7 @@ app.use(express.static(distPath));
 
 //GET
 app.get('/', (req, res) => {
-  res.status(200).sendFile(__dirname + '/index.html');
+  res.status(200).sendFile(path.resolve('./public/index.html'));
 });
 
 
