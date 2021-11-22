@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+import Search from './Search.jsx';
 
 const App = () => {
   const [thing] = useState(null);
@@ -9,6 +10,7 @@ const App = () => {
   return (
     <div>
       <h1>Boiler</h1>
+      <Search />
     </div>
   );
 
