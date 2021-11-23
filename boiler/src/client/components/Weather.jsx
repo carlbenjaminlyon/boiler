@@ -2,16 +2,11 @@ import React, { useEffect, useState } from 'react';
 import WeatherDay from './WeatherDay.jsx';
 
 import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-// import ACCUWEATHER from process.env;
-// import axios from 'axios';
-// import { TextField } from '@mui/material/TextField';
-// import { Autocomplete } from '@mui/material/Autocomplete';
-// import { CircularProgress } from '@mui/material/CircularProgress';
-
-//Async function
+import { accuweather } from '../../../config/keys';
 
 
 const Weather = () => {
@@ -56,21 +51,67 @@ const Weather = () => {
       .catch((err) => { console.log('Could not retrieve weather data', err); });
   }, []);
 
-
+  //If api fetch fails, component will not render.
   return (
     <div>
-      {!!weatherInfo && weatherInfo.map((i, index) => (
-        <div key={index}>
-          <WeatherDay
-            min={i.min}
-            max={i.max}
-            weatherType={i.weatherType}
-            weatherIcon={i.weatherIcon} />
-        </div>
-      ))}
+      <Grid direction="rows" container justifyContent="flex-end">
+        {!!weatherInfo && weatherInfo.map((i, index) => (
+          <div key={index}>
+            <Grid>
+              <Box sx={{
+                display: 'flex',
+                alignContent: 'flex-end',
+                bgcolor: 'primary.main',
+                color: 'white',
+                border: 1,
+                borderRadius: 3,
+                textAlign: 'center',
+                fontSize: '1rem',
+                p: 1,
+                m: 2,
+              }}>
+
+                <WeatherDay
+                  min={i.min}
+                  max={i.max}
+                  weatherType={i.weatherType}
+                  weatherIcon={i.weatherIcon} />
+              </Box>
+            </Grid>
+          </div>
+        ))}
+      </Grid>
     </div>
   );
 
 };
 
 export default Weather;
+
+
+// return (
+//   <div>
+//     {!!weatherInfo && weatherInfo.map((i, index) => (
+//       <div key={index}>
+//         <Box sx={{
+//                   display: 'flex',
+//                   flexDirection: 'row',
+//                   bgcolor: 'primary.main',
+//                   color: 'white',
+//                   borderRadius: 3,
+//                   textAlign: 'center',
+//                   fontSize: '1rem',
+//                   p: 1,
+//                   m: 2,
+//                   }}>
+
+//         <WeatherDay
+//           min={i.min}
+//           max={i.max}
+//           weatherType={i.weatherType}
+//           weatherIcon={i.weatherIcon} />
+//           </Box>
+//       </div>
+//     ))}
+//   </div>
+// );
