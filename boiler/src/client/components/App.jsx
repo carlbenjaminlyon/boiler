@@ -52,6 +52,13 @@ const App = () => {
             </Typography>
           </Container>
         </div>
+        <div>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
+                  <Search />
+              </Typography>
+            </Container>
+        </div>
       </main>
     </>
   );

@@ -28,7 +28,7 @@ const Search = ({ store }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Search;
