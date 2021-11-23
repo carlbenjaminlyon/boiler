@@ -2,12 +2,14 @@
 const path = require('path');
 const express = require('express');
 const dotenv = require('dotenv');
+const passport = require('passport-google-oauth2');
 // const PORT = 8080;
 dotenv.config({ path: '../.env' });
 const PORT = 3000;
 // const { DBName } = require('./db');
 const distPath = path.resolve(__dirname, '...', 'dist');
 const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
+const GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 const app = express();
 
@@ -16,6 +18,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static(distPath));
+
+//for google passport use
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
+
+// console.log('this is g client id: ', process.env.GOOGLE_CLIENT_ID);
+
+//google oauth configure strategy
+passport.use(new GoogleStrategy({
+  clientID: '726401266288-tj76o0cb7esn7a7jbupusvp340lun1pg.apps.googleusercontent.com',
+  clientSecret: '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',
+  callbackURL: 'http://127.0.0.1:3000/auth/google/callback', //maybe need to change on deploy
+  passReqToCallback: true
+},
+function(request, accessToken, refreshToken, profile, done) {
+  User.findOrCreate({ googleId: profile.id }, function (err, user) {
+    return done(err, user);
+  });
+}
+));
 
 ////Server Routing////
 
@@ -35,6 +58,20 @@ app.get('/api/restaurants', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// google oauth request
+app.get('/auth/google',
+  passport.authenticate('google', { scope:
+    [ 'email', 'profile' ] }
+  )
+);
+
+app.get( '/auth/google/callback',
+  passport.authenticate( 'google', {
+    successRedirect: '/auth/google/success',
+    failureRedirect: '/auth/google/failure'
+  })
+);
 
 // gets a user's favorite restaurants
 app.get('/api/favorites/:id', (req, res) => {

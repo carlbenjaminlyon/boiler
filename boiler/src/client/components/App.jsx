@@ -1,7 +1,7 @@
-<<<<<<< HEAD
 // <<<<<<< HEAD
-=======
->>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
+// <<<<<<< HEAD
+// =======
+// >>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
 import React, { useState } from 'react';
 import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton } from '@material-ui/core';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -11,12 +11,11 @@ import '../styles/style.css';
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
 import Events from './Events.jsx';
+import GoogleSignIn from './GoogleSignIn.jsx';
 /////////////
 
 const App = () => {
   const [item] = useState(null);
-
-
 
   return (
     <>
@@ -59,13 +58,20 @@ const App = () => {
             </Typography>
           </Container>
         </div>
+        <div>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              <GoogleSignIn />
+            </Typography>
+          </Container>
+        </div>
       </main>
     </>
   );
 
 };
 
-<<<<<<< HEAD
+// <<<<<<< HEAD
 // =======
 // import React, { useState } from 'react';
 // import { Typography, AppBar, CssBaseline, Toolbar, Container } from '@material-ui/core';
@@ -115,6 +121,6 @@ const App = () => {
 // };
 
 // // >>>>>>> f3ab80f2231ac88db051baf70221a9b2fc955f03
-=======
->>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
+// =======
+// >>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
 export default App;
