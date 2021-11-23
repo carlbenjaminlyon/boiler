@@ -10,8 +10,12 @@ import '../styles/style.css';
 // Imports //
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
+// <<<<<<< HEAD
 import Events from './Events.jsx';
 import GoogleSignIn from './GoogleSignIn.jsx';
+// =======
+import Search from './Search.jsx';
+// >>>>>>> 8f540393d297ffb10ee2f175449b54b73a696342
 /////////////
 
 const App = () => {
@@ -23,7 +27,7 @@ const App = () => {
       <AppBar position="relative">
         <Toolbar>
           <IconButton
-            size='large'
+            size='small'
             edge='start'
             color='inherit'
             aria-label='menu'
@@ -64,6 +68,13 @@ const App = () => {
               <GoogleSignIn />
             </Typography>
           </Container>
+        </div>
+        <div>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
+                  <Search />
+              </Typography>
+            </Container>
         </div>
       </main>
     </>

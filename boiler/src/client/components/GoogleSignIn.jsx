@@ -23,7 +23,7 @@ class GoogleSignIn extends React.Component {
   render() {
     return (
       <div>
-        <div id="g_id_onload"
+        {/* <div id="g_id_onload"
           data-client_id="726401266288-2vtmi6h3uujngjisd9uu7ic0t95f7v8b.apps.googleusercontent.com"
           data-context="signup"
           data-ux_mode="popup"
@@ -31,14 +31,15 @@ class GoogleSignIn extends React.Component {
           data-auto_prompt="false">
         </div>
 
-        <div class="g_id_signin"
+        <div className="g_id_signin"
           data-type="standard"
           data-shape="rectangular"
           data-theme="filled_blue"
           data-text="signin_with"
           data-size="large"
           data-logo_alignment="left">
-        </div>
+        </div> */}
+        Test
       </div>
     );
   }
