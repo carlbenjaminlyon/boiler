@@ -17,36 +17,40 @@ const App = () => {
   return (
     <>
       <CssBaseline />
-      <AppBar position="relative">
+      <AppBar position="fixed">
         <Toolbar>
-          <IconButton
-            size='large'
-            edge='start'
-            color='inherit'
-            aria-label='menu'
-            sx={{ mr: 5 }}
-          />
-          <MenuIcon />
-
-            <Typography variant='h4' align='center'>
+          <IconButton>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant='h4' align='center'>
               Boiler!
-            </Typography>
+          </Typography>
+          <Typography variant='h4' color='textPrimary'>
+            <Weather />
+          </Typography>
         </Toolbar>
       </AppBar>
       <main>
         <div>
-            <Container maxWidth="sm">
-              <Typography variant='h4' color='textPrimary'>
-                  <Weather />
-              </Typography>
-            </Container>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              Text here, to be replaced.
+            </Typography>
+          </Container>
         </div>
         <div>
-            <Container maxWidth="sm">
-              <Typography variant='h4' color='textPrimary'>
-                  <FavoritesList />
-              </Typography>
-            </Container>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              <FavoritesList />
+            </Typography>
+          </Container>
+        </div>
+        <div>
+          <Container maxWidth="sm">
+            <Typography variant='h4' color='textPrimary'>
+              <Search />
+            </Typography>
+          </Container>
         </div>
         <div>
             <Container maxWidth="sm">
