@@ -52,7 +52,8 @@ const Weather = () => {
           weatherIcon: daily.Day.Icon,
           // weatherIcon: padNum(daily.Day.Icon)
         };
-      })));
+      })))
+      .catch((err) => { console.log('Could not retrieve weather data', err); });
   }, []);
 
 
