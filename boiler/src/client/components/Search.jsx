@@ -1,4 +1,4 @@
-import React, { useState, UseEffect } from "react";
+import React, { useState, UseEffect } from 'react';
 import axios from 'axios';
 
 const Search = ({ store }) => {
@@ -11,7 +11,7 @@ const Search = ({ store }) => {
     <div className="card mb-3">
       <div className="row no-gutters">
         <div className="col-md-4">
-          <img className="card-img-top store-image" src={store.image_url}></img>
+          {/* <img className="card-img-top store-image" src={store.image_url}></img> */}
         </div>
         <div className="col-md-8">
           <div className="card-body">

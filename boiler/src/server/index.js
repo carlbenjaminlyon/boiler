@@ -60,18 +60,9 @@ app.get('/api/restaurants', (req, res) => {
 });
 
 // google oauth request
-// app.get('/auth/google',
-//   passport.authenticate('google', { scope:
-//     [ 'email', 'profile' ] }
-//   )
-// );
-
-// app.get( '/auth/google/callback',
-//   passport.authenticate( 'google', {
-//     successRedirect: '/auth/google/success',
-//     failureRedirect: '/auth/google/failure'
-//   })
-// );
+app.get('/login', (req, res) => {
+  res.status(200).send('login success');
+});
 
 // gets a user's favorite restaurants
 app.get('/api/favorites/:id', (req, res) => {

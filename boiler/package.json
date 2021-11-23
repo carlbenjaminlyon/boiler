@@ -19,7 +19,8 @@
     "react-scripts": "4.0.3",
     "sequelize": "^6.12.0-alpha.1",
     "web-vitals": "^1.1.2",
-    "passport-google-oauth2": "^0.2.0"
+    "passport-google-oauth2": "^0.2.0",
+    "react-google-login": "^5.2.2"
   },
   "scripts": {
     "start": "nodemon src/server/index.js",

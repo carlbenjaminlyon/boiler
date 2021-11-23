@@ -64,17 +64,17 @@ const App = () => {
         </div>
         <div>
           <Container maxWidth="sm">
-            <Typography variant='h4' color='textPrimary'>
+            <Typography variant='h5' color='textPrimary'>
               <GoogleSignIn />
             </Typography>
           </Container>
         </div>
         <div>
-            <Container maxWidth="sm">
+            {/* <Container maxWidth="sm">
               <Typography variant='h4' color='textPrimary'>
                   <Search />
               </Typography>
-            </Container>
+            </Container> */}
         </div>
       </main>
     </>
