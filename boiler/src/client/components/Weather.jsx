@@ -14,7 +14,7 @@ const Weather = () => {
 
 
 
-  const apiKey = `JzqsG2M1k9uBvVQigY12bAs0PNltgrkr`;
+  const apiKey = ``;
   // const apiKey = ACCUWEATHER;
 
   const locationKey = `30307_PC`;
