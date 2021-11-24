@@ -9,6 +9,7 @@ import FavoritesList from './FavoritesList.jsx';
 import Events from './Events.jsx';
 import GoogleSignIn from './GoogleSignIn.jsx';
 import Search from './Search.jsx';
+import RestaurantList from './RestaurantList.jsx';
 
 const App = () => {
   const [item] = useState(null);
@@ -71,60 +72,15 @@ const App = () => {
             </Typography>
           </Container>
         </div>
+        <div>
+          <Container maxWidth="sm">
+            <RestaurantList />
+          </Container>
+        </div>
       </main>
     </>
   );
 
 };
 
-// import React, { useState } from 'react';
-// import { Typography, AppBar, CssBaseline, Toolbar, Container } from '@material-ui/core';
-// //I want to import icons and additional useful stuff for this
-// import '../styles/style.css';
-
-// // Imports //
-// import Weather from './Weather.jsx';
-// import FavoritesList from './FavoritesList.jsx';
-// /////////////
-
-// import Search from './Search.jsx';
-
-// const App = () => {
-//   const [item] = useState(null);
-
-
-
-//   return (
-//     <div>
-//       <h1>Boiler</h1>
-//       <Search />
-//     </div>
-
-//     <>
-//       <CssBaseline />
-//       <AppBar position="relative">
-//         <Toolbar>
-//             <Typography variant='h2' align='center'>
-//               Boiler!
-//             </Typography>
-//         </Toolbar>
-//       </AppBar>
-//       <main>
-//         <div>
-//             <Container maxWidth="sm">
-//               <Typography variant='h4' color='textPrimary'>
-//                   <Weather />
-//                   <FavoritesList />
-//               </Typography>
-//             </Container>
-//         </div>
-//       </main>
-//     </>
-//   );
-
-// };
-
-// // >>>>>>> f3ab80f2231ac88db051baf70221a9b2fc955f03
-// =======
-// >>>>>>> 0856298f2105fbb6653715a44fe114ed90686c56
 export default App;
