@@ -10,9 +10,7 @@ const Search = () => {
 
   return (
     <div>
-      <form>
-        test
-      </form>
+      <input type="text" placeholder='Search' />
     </div>
   )
 };
