@@ -6,7 +6,9 @@ const dotenv = require('dotenv');
 dotenv.config({ path: '../.env' });
 const PORT = 3000;
 // const { DBName } = require('./db');
-const distPath = path.resolve(__dirname, '...', 'dist');
+const distPath = path.resolve(__dirname, 'dist');
+
+console.log('distPath:', distPath);
 const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
 
 const app = express();
@@ -15,14 +17,18 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(distPath));
+app.use(express.static('./dist'));
 
 ////Server Routing////
 
 //GET
-app.get('/', (req, res) => {
-  res.status(200).sendFile(path.resolve('./dist/index.html'));
-});
+// app.get('/', (req, res) => {
+//   res.status(200).sendFile(path.resolve('./dist/index.html'));
+// });
+
+// app.get('/', (req, res) => {
+//   res.sendFile(path.join(distPath, './index.html'));
+// });
 
 
 app.get('/api/restaurants', (req, res) => {
@@ -184,7 +190,7 @@ app.delete('/api/favorites/:id', (req, res) => {
       title: title
     }
   });
-  
+
   Users_restaurants.destroy({
     where: {
       UserId: req.params.id,
