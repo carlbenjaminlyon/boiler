@@ -6,19 +6,13 @@ import Grid from '@mui/material/Grid';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { accuweather } from '../../../config/keys';
+// import { accuweather } from '../../../config/keys.js';
+const apiKey = require('../../../config/keys').api.accuweather;
 
 
 const Weather = () => {
 
-
-
-
-  const apiKey = ``;
-  // const apiKey = ACCUWEATHER;
-
   const locationKey = `30307_PC`;
-
   const [weatherInfo, setWeatherInfo] = useState();
 
   //api expects two digit number to represent icon filename
