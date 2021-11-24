@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(distPath));
+app.use(express.static('./dist'));
 
 //for google passport use
 // app.use(passport.initialize());

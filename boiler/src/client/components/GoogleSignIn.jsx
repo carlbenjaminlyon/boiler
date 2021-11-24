@@ -9,10 +9,11 @@ const clientId =
 
 // eslint-disable-next-line func-style
 function GoogleSignIn() {
+
   const onSuccess = (res) => {
-    console.log('Login Success: currentUser:', res.profileObj);
+    console.log('Login Success: current user:', res.profileObj);
     alert(
-      `Logged in successfully welcome ${res.profileObj.name}. \n See console for full profile object.`
+      `Logged in successfully to ${res.profileObj.name}. \n See console for full profile object.`
     );
     refreshTokenSetup(res);
   };
