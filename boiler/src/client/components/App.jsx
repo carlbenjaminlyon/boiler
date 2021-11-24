@@ -6,12 +6,12 @@ import '../styles/style.css';
 // Imports //
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
-import Search from './Search.jsx';
+// import Search from './Search.jsx';
 /////////////
 
 const App = () => {
   const [item] = useState(null);
-
+  const store = useState({});
 
 
   return (
@@ -49,11 +49,11 @@ const App = () => {
             </Container>
         </div>
         <div>
-            <Container maxWidth="sm">
+            {/* <Container maxWidth="sm">
               <Typography variant='h4' color='textPrimary'>
-                  <Search />
+                  <Search store={store} />
               </Typography>
-            </Container>
+            </Container> */}
         </div>
       </main>
     </>
