@@ -4,14 +4,16 @@ import { useGoogleLogin } from 'react-google-login';
 // refresh token
 import { refreshTokenSetup } from '../utils/refreshToken';
 
-const clientId =
-  '726401266288-2vtmi6h3uujngjisd9uu7ic0t95f7v8b.apps.googleusercontent.com';
+const googleKey = require('../../../config/keys').googleOAuth.APIkey;
+
+const clientId = googleKey;
 
 // eslint-disable-next-line func-style
 function GoogleSignIn() {
 
   const onSuccess = (res) => {
     console.log('Login Success: current user:', res.profileObj);
+    console.log('res object: ', res);
     alert(
       `Logged in successfully to ${res.profileObj.name}. \n See console for full profile object.`
     );
@@ -31,8 +33,6 @@ function GoogleSignIn() {
     clientId,
     isSignedIn: true,
     accessType: 'offline',
-    // responseType: 'code',
-    // prompt: 'consent',
   });
 
   return (

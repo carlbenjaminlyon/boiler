@@ -20,7 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('./dist'));
-<<<<<<< HEAD
 
 //for google passport use
 // app.use(passport.initialize());
@@ -42,8 +41,6 @@ app.use(express.static('./dist'));
 //   });
 // }
 // ));
-=======
->>>>>>> 5015b98b94f93ece6bc7cbf7ded94242248a8d8e
 
 ////Server Routing////
 
