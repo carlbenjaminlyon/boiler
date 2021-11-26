@@ -20,7 +20,7 @@ const Store = ({ store }) => {
             <h2 className="card-title">{store.name}</h2>
             <div className="card-text" style={{marginBottom: '10px'}}>
               <h5 className="store-address" onClick={showInMapClicked}>
-                {store.location.display_address[0]}<br />{store.location.display_address[1]}
+                {/* {store.location.display_address[0]}<br />{store.location.display_address[1]} */}
               </h5>
             </div>
             <div className="card-text">

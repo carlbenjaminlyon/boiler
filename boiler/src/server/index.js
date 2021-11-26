@@ -6,7 +6,7 @@ const dotenv = require('dotenv');
 dotenv.config({ path: '../.env' });
 const PORT = 3000;
 // const { DBName } = require('./db');
-const distPath = path.resolve(__dirname, '...', 'dist');
+const distPath = path.resolve(__dirname, 'dist');
 const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
 
 const app = express();
@@ -15,9 +15,17 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.static(distPath));
+app.use(express.static('./dist'));
+
 
 ////Server Routing////
+
+//cors
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 //GET
 app.get('/', (req, res) => {

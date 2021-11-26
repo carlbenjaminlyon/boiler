@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { Route, Link, BrowserRouter } from 'react-router-dom';
 import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton } from '@material-ui/core';
 import MenuIcon from '@mui/icons-material/Menu';
 import '../styles/style.css';
@@ -7,12 +8,12 @@ import '../styles/style.css';
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
 import Search from './Search.jsx';
+import Store from './Store.jsx';
 /////////////
 
 const App = () => {
   const [item] = useState(null);
-  const store = useState({});
-
+  const [store, useStore] = useState([]);
 
   return (
     <>
@@ -51,7 +52,14 @@ const App = () => {
         <div>
             <Container maxWidth="sm">
               <Typography variant='h4' color='textPrimary'>
-                  <Search store={store} />
+                  <Search useStore={ useStore } />
+              </Typography>
+            </Container>
+        </div>
+        <div>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
+                  <Store store={ store } />
               </Typography>
             </Container>
         </div>
