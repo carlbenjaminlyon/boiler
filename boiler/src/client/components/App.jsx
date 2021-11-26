@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// import { Route, Link, BrowserRouter } from 'react-router-dom';
 import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton } from '@material-ui/core';
 import MenuIcon from '@mui/icons-material/Menu';
 import '../styles/style.css';
@@ -6,21 +7,24 @@ import '../styles/style.css';
 // Imports //
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
-import Events from './Events.jsx';
-import GoogleSignIn from './GoogleSignIn.jsx';
 import Search from './Search.jsx';
+
+/////////////
+
 import RestaurantList from './RestaurantList.jsx';
+
 
 const App = () => {
   const [item] = useState(null);
+  const [store, useStore] = useState([]);
 
   return (
     <>
       <CssBaseline />
-      <AppBar position="fixed">
+      <AppBar position="relative">
         <Toolbar>
           <IconButton
-            size='small'
+            size='large'
             edge='start'
             color='inherit'
             aria-label='menu'
@@ -28,50 +32,34 @@ const App = () => {
           />
           <MenuIcon />
 
-          <Typography variant='h4' align='center'>
+            <Typography variant='h4' align='center'>
               Boiler!
-          </Typography>
-          <IconButton>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h4' align='center'>
-              Boiler!
-          </Typography>
-          <Typography variant='h4' color='textPrimary'>
-            <Weather />
-          </Typography>
+            </Typography>
         </Toolbar>
       </AppBar>
       <main>
         <div>
-          <Container maxWidth="sm">
-            <Typography variant='h4' color='textPrimary'>
-              <Weather />
-              Text here, to be replaced.
-            </Typography>
-          </Container>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
+                  <Weather />
+              </Typography>
+            </Container>
         </div>
         <div>
-          <Container maxWidth="sm">
-            <Typography variant='h4' color='textPrimary'>
-              <FavoritesList />
-            </Typography>
-          </Container>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
+                  <FavoritesList />
+              </Typography>
+            </Container>
         </div>
         <div>
-          <Container maxWidth="sm">
-            <Typography variant='h4' color='textPrimary'>
-              {/* <Search /> */}
-            </Typography>
-          </Container>
+            <Container maxWidth="sm">
+              <Typography variant='h4' color='textPrimary'>
+                  <Search />
+              </Typography>
+            </Container>
         </div>
-        <div>
-          <Container maxWidth="sm">
-            <Typography variant='h5' color='textPrimary'>
-              <GoogleSignIn />
-            </Typography>
-          </Container>
-        </div>
+
         <div>
           <Container maxWidth="sm">
             <RestaurantList />
