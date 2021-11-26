@@ -8,8 +8,11 @@ import '../styles/style.css';
 import Weather from './Weather.jsx';
 import FavoritesList from './FavoritesList.jsx';
 import Search from './Search.jsx';
-import Store from './Store.jsx';
+
 /////////////
+
+import RestaurantList from './RestaurantList.jsx';
+
 
 const App = () => {
   const [item] = useState(null);
@@ -52,16 +55,15 @@ const App = () => {
         <div>
             <Container maxWidth="sm">
               <Typography variant='h4' color='textPrimary'>
-                  <Search useStore={ useStore } />
+                  <Search />
               </Typography>
             </Container>
         </div>
+
         <div>
-            <Container maxWidth="sm">
-              <Typography variant='h4' color='textPrimary'>
-                  <Store store={ store } />
-              </Typography>
-            </Container>
+          <Container maxWidth="sm">
+            <RestaurantList />
+          </Container>
         </div>
       </main>
     </>
