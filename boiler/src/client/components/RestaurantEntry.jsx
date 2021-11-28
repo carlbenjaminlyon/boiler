@@ -3,6 +3,8 @@ import axios from 'axios';
 import {Button, Box, CardHeader, CardMedia, CardContent, Typography, IconButton} from '@mui/material';
 import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 const RestaurantEntry = (props) => {
   // let initialIcon = BookmarkAddOutlinedIcon;
@@ -55,31 +57,40 @@ const RestaurantEntry = (props) => {
 
   return (
 
-    <Card variant='outlined' className='restaurant-card'>
+    <Card sx={{ maxWidth: 300 }}>
       <CardHeader
-        title={title}
-      />
+        title="Some basic title"
+        subheader="November 24th, 2021" />
       <CardMedia
-        component='img'
-        height='194'
-        image={imageUrl}
-        alt="image of restaurant"
+        component="img"
+        height="194"
+        image=""
+        alt=""
       />
       <CardContent>
-        <Typography variant='body2'>
-          {address}
-          $ {price}
-          {yelpRating}
+        <Typography variant="body2" color="text.secondary">
+          This is just some text in the typography field to fill in the space while we figure out whats next.
         </Typography>
+        <Typography>Address: {address}</Typography>
+        <Typography>Price: ${price}</Typography>
+        <Typography>Yelp Rating:{yelpRating}</Typography>
       </CardContent>
-      <CardActions>
-        <IconButton label='Toggle Favorites'>
+      <CardActions disableSpacing>
+        <Tooltip title="Remove from Favorites" placement ="right-start" arrow>
           {
-            props.favorite
-              ? <BookmarkAddedOutlinedIcon />
-              : <BookmarkAddOutlinedIcon />
+            props.isFavorite
+              ? (
+                <IconButton label='Toggle Favorites'>
+                  <BookmarkAddedOutlinedIcon />
+                </IconButton>
+              )
+              :
+              (<IconButton label='Toggle Favorites'>
+                <BookmarkAddOutlinedIcon />
+              </IconButton>
+              )
           }
-        </IconButton>
+        </Tooltip>
       </CardActions>
     </Card>
   );

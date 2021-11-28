@@ -27,11 +27,6 @@ app.use(function(req, res, next) {
   next();
 });
 
-//GET
-app.get('/', (req, res) => {
-  res.status(200).sendFile(path.resolve('./dist/index.html'));
-});
-
 
 app.get('/api/restaurants', (req, res) => {
   Restaurant.findAll()
@@ -45,8 +40,8 @@ app.get('/api/restaurants', (req, res) => {
 });
 
 // gets a user's favorite restaurants
-app.get('/api/favorites/:id', (req, res) => {
-  User.findByPk(req.params.id, {
+app.get('/api/favorites/', (req, res) => {
+  User.findOne({where: {email: req.body.email}}, {
     include: [
       {
         model: Restaurant,
@@ -62,6 +57,17 @@ app.get('/api/favorites/:id', (req, res) => {
       res.sendStatus(500);
     });
 });
+
+// checks if a user already exists
+app.get('/api/users/', (req, res) => {
+  const { email } = req.body;
+  User.findOne({where: {email: email}})
+    .then((data) => {
+      console.log(data);
+      res.status(200).json(data) })
+    .catch((err) => {console.log('Could not find user.')});
+});
+
 
 //POST
 // adds a user
@@ -99,11 +105,12 @@ app.post('/api/restaurants', (req, res) => {
 });
 
 // adds a restaurant to favorites
-app.post('/api/favorites/:id', (req, res) => {
-  const restaurantId = req.body.id;
+app.post('/api/favorites/', (req, res) => {
+  const { email, restaurantId } = req.body;
+  const targetUser = Users.findOne({where: {email: email}});
 
   Users_restaurants.create({
-    UserId: req.params.id,
+    UserId: targetUser.id,
     RestaurantId: restaurantId
   })
     .then(() => {
@@ -192,7 +199,7 @@ app.delete('/api/favorites/:id', (req, res) => {
       title: title
     }
   });
-  
+
   Users_restaurants.destroy({
     where: {
       UserId: req.params.id,
