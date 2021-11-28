@@ -25,15 +25,18 @@ const User = db.define('User', {
     autoIncrement: true
   },
   username: DataTypes.STRING(255),
-  email: DataTypes.STRING(255),
+  email: {
+    type: DataTypes.STRING(255),
+    unique: true
+  },
   lat: DataTypes.DECIMAL(9, 6),
   long: DataTypes.DECIMAL(9, 6),
 });
 
 /**
- * 
+ *
  * Restaurant model
- * 
+ *
  */
 
 const Restaurant = db.define('Restaurant', {
@@ -44,8 +47,11 @@ const Restaurant = db.define('Restaurant', {
     autoIncrement: true
   },
   title: DataTypes.STRING(255),
-  price: DataTypes.DECIMAL(4, 2),
-  address: DataTypes.STRING(255),
+  price: DataTypes.STRING(255),
+  address: {
+    type: DataTypes.STRING(255),
+    unique: true
+  },
   lat: {
     type: DataTypes.DECIMAL(9, 6),
     allowNull: false
@@ -61,9 +67,9 @@ const Restaurant = db.define('Restaurant', {
 });
 
 /**
- * 
+ *
  * User_restaurants join table
- * 
+ *
  */
 
 const Users_restaurants = db.define('Users_restaurants', {}, {timestamps: false});
