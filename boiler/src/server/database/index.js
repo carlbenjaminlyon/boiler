@@ -47,8 +47,11 @@ const Restaurant = db.define('Restaurant', {
     autoIncrement: true
   },
   title: DataTypes.STRING(255),
-  price: DataTypes.DECIMAL(4, 2),
-  address: DataTypes.STRING(255),
+  price: DataTypes.STRING(255),
+  address: {
+    type: DataTypes.STRING(255),
+    unique: true
+  },
   lat: {
     type: DataTypes.DECIMAL(9, 6),
     allowNull: false
