@@ -36,14 +36,19 @@ const Search = () => {
 
   return (
     <div>
+      <br/>
+      <br/>
       <button onClick={getCrawfish}>where da crawfish</button>
-      <p>{'Restaurants Near You: '}</p>
+      <br/>
+      <br/>
+      <br/>
+
       <div>
-        {
+        {/* {
           store.map((x) => (
             <Store store={x} />
           ))
-        }
+        } */}
       </div>
     </div>
   );

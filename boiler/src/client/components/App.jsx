@@ -52,14 +52,15 @@ const App = () => {
             <Weather />
           </Typography>
           <GoogleSignIn />
+          <Search />
+
         </Toolbar>
       </AppBar>
       <main>
         <div>
           <Container maxWidth="sm">
             <Typography variant='h4' color='textPrimary'>
-            {/* <Search /> */}
-
+            <Search />
             </Typography>
           </Container>
         </div>

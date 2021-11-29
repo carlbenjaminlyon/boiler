@@ -62,6 +62,9 @@ const RestaurantList = (props) => {
   return (
     <div>
       <h2>Restaurants in the Area</h2>
+      <br/>
+
+
       <div className="restaurant-list">
         <Grid
           container
