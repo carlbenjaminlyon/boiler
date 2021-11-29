@@ -1,4 +1,5 @@
 import React, { useState, UseEffect } from "react";
+import { Typography, AppBar, CssBaseline, Toolbar, Container, Box, IconButton, Card } from '@material-ui/core';
 import axios from 'axios';
 
 const Store = ({ store }) => {
@@ -10,7 +11,7 @@ const Store = ({ store }) => {
   };
 
   return (
-    <div className="card mb-3">
+    <Card className="card mb-3">
       <div className="row no-gutters">
         <div className="col-md-4">
           <img className="card-img-top store-image" src={store.image_url}></img>
@@ -20,7 +21,7 @@ const Store = ({ store }) => {
             <h2 className="card-title">{store.name}</h2>
             <div className="card-text" style={{marginBottom: '10px'}}>
               <h5 className="store-address" onClick={showInMapClicked}>
-                {/* {store.location.display_address[0]}<br />{store.location.display_address[1]} */}
+                {store.location.display_address[0]}<br />{store.location.display_address[1]}
               </h5>
             </div>
             <div className="card-text">
@@ -29,7 +30,7 @@ const Store = ({ store }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Card>
   )
 }
 

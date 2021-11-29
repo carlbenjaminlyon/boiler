@@ -48,12 +48,6 @@ const App = () => {
           <Typography variant='h4' align='center'>
                     Boiler!
           </Typography>
-          <IconButton>
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h4' align='center'>
-                    Boiler!
-          </Typography>
           <Typography variant='h4' color='textPrimary'>
             <Weather />
           </Typography>

@@ -20,10 +20,10 @@ function GoogleSignIn() {
   const {currentUser, changeCurrentUser} = useSharedUser();
 
   const onSuccess = (res) => {
-    console.log('Login Success: current user:', res.profileObj);
-    console.log('res object: ', res);
-    // changeCurrentUser(res.profileObj);
-    console.log('currentUser from GoogleSignIn', currentUser);
+    // console.log('Login Success: current user:', res.profileObj);
+    // console.log('res object: ', res);
+    // // changeCurrentUser(res.profileObj);
+    // console.log('currentUser from GoogleSignIn', currentUser);
 
 
     axios.post('/api/users', res.profileObj)
