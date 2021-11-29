@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 
 app.get('/api/restaurants', (req, res) => {
   Restaurant.findAll()
-    .then(({data}) => {
+    .then((data) => {
       res.status(200).send(data);
     })
     .catch(err => {

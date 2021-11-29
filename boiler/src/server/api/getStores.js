@@ -4,7 +4,9 @@ const key = require('../../../config/keys').yelp.APIkey;
 const getCrawfish = (location) => {
   return axios.get(`https://api.yelp.com/v3/businesses/search?location=${location}&categories=crawfish`, {
     headers: {
-      Authorization: `Bearer ${key}`
+      Authorization: `Bearer ${key}`,
+      Origin: '',
+      'X-Requested-With': ''
     }
   })
     .then(response => response.data.businesses)

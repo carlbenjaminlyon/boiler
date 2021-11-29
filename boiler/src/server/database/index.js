@@ -47,6 +47,7 @@ const Restaurant = db.define('Restaurant', {
     autoIncrement: true
   },
   title: DataTypes.STRING(255),
+  imageUrl: DataTypes.STRING(255),
   price: DataTypes.STRING(255),
   address: {
     type: DataTypes.STRING(255),
