@@ -4,7 +4,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 // const PORT = 8080;
 dotenv.config({ path: '../.env' });
-const PORT = 3307;
+const PORT = 3000;
 // const { DBName } = require('./db');
 const distPath = path.resolve(__dirname, 'dist');
 const { db, User, Restaurant, Users_restaurants } = require('./database/index.js');
@@ -87,13 +87,15 @@ app.post('/api/users', (req, res) => {
 });
 
 app.post('/api/restaurants', (req, res) => {
-  const { title, price, address, lat, long } = req.body;
+  const { title, price, address, lat, long, imageUrl, yelpRating } = req.body;
   Restaurant.create({
     title: title,
     price: price,
     address: address,
     lat: lat,
-    long: long
+    long: long,
+    imageUrl: imageUrl,
+    yelpRating: yelpRating
   })
     .then(restaurant => {
       res.status(201).json(restaurant);
@@ -107,7 +109,7 @@ app.post('/api/restaurants', (req, res) => {
 // adds a restaurant to favorites
 app.post('/api/favorites/', (req, res) => {
   const { email, restaurantId } = req.body;
-  const targetUser = Users.findOne({where: {email: email}});
+  const targetUser = User.findOne({where: {email: email}});
 
   Users_restaurants.create({
     UserId: targetUser.id,
@@ -192,17 +194,22 @@ app.delete('/api/restaurants/:id', (req, res) => {
 });
 
 // ID in params is UserID, restaurant name in body
-app.delete('/api/favorites/:id', (req, res) => {
-  const {title} = req.body;
+app.delete('/api/favorites/', (req, res) => {
+  const {title, userEmail} = req.body;
   const targetRestaurant = Restaurant.findOne({
     where: {
       title: title
     }
   });
+  const currentUser = User.findOne({
+    where: {
+      email: userEmail
+    }
+  });
 
   Users_restaurants.destroy({
     where: {
-      UserId: req.params.id,
+      UserId: currentUser.id,
       RestaurantId: targetRestaurant.id
     }
   })

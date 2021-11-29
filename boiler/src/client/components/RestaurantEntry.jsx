@@ -9,13 +9,16 @@ import Card from '@mui/material/Card';
 import { CardActions } from '@material-ui/core';
 import { Tooltip } from '@material-ui/core';
 
+import { useSharedUser } from './User.jsx';
+
+
 const RestaurantEntry = (props) => {
   // let initialIcon = BookmarkAddOutlinedIcon;
   // if (props.favorite) {
   //   initialIcon = BookmarkAddedOutlinedIcon;
   // }
   // const [bookmarkIcon, setBookmarkIcon] = useState(initialIcon);
-
+  const { currentUser } = useSharedUser();
   const {yelpRating, title, address, price, imageUrl, id} = props.restaurant;
 
   // const updateRating = (e) => {
@@ -30,7 +33,7 @@ const RestaurantEntry = (props) => {
 
   const toggleFavorites = () => {
     if (props.favorite) {
-      axios.delete(`/api/favorites/${currentUser.id}`, {title: title})
+      axios.delete('/api/favorites/', {title: title, userEmail: currentUser.email})
         .then(() => {
           console.log('successfully removed from favorites');
           setBookmarkIcon(BookmarkAddOutlinedIcon);
@@ -40,7 +43,7 @@ const RestaurantEntry = (props) => {
           console.log('failed to add favorite');
         });
     } else {
-      axios.put(`/api/favorites/${currentUser.id}`, {id: id })
+      axios.post('/api/favorites/', {restaurantId: id, userEmail: currentUser.email })
         .then(() => {
           console.log('successfully added to favorites');
           setBookmarkIcon(BookmarkAddedOutlinedIcon);
@@ -60,14 +63,14 @@ const RestaurantEntry = (props) => {
 
   return (
 
-    <Card sx={{ maxWidth: 300 }}>
+    <Card sx={{ maxWidth: 600 }}>
       <CardHeader
         title={title}
         subheader="November 24th, 2021" />
       <CardMedia
         component="img"
         height="194"
-        image=""
+        image={imageUrl}
         alt=""
       />
       <CardContent>
@@ -79,7 +82,7 @@ const RestaurantEntry = (props) => {
         <Typography>Yelp Rating:{yelpRating}</Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <Tooltip title="Remove from Favorites" placement ="right-start" arrow>
+        <Tooltip title="Remove from Favorites" placement ="right-start" arrow onClick={handleClick}>
           {
             props.isFavorite
               ? (

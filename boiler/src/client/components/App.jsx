@@ -52,32 +52,27 @@ const App = () => {
             <Weather />
           </Typography>
         </Toolbar>
-      </AppBar><main>
+      </AppBar>
+      <main>
         <div>
           <Container maxWidth="sm">
             <Typography variant='h4' color='textPrimary'>
-              <Weather />
-                        Text here, to be replaced.
-            </Typography>
-          </Container>
-        </div>
-        <div>
-          <Container maxWidth="sm">
-            <Typography variant='h4' color='textPrimary'>
-              {/* <FavoritesList /> */}
+            {/* <Search /> */}
+
             </Typography>
           </Container>
         </div>
 
+
         <div>
           <Container maxWidth="sm">
             <Typography variant='h4' color='textPrimary'>
-              <Search />
+              {/* <Search /> */}
             </Typography>
           </Container>
         </div>
         <div>
-          <Container maxWidth="sm">
+          <Container maxWidth="lg">
             <RestaurantList />
           </Container>
         </div>

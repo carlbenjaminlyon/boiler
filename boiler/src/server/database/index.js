@@ -60,7 +60,7 @@ const Restaurant = db.define('Restaurant', {
   long: {
     type: DataTypes.DECIMAL(9, 6)
   },
-  yelpRating: DataTypes.DECIMAL(1, 1),
+  yelpRating: DataTypes.DECIMAL(2, 1),
   userRating: DataTypes.DECIMAL(5, 4),
   reviewCount: {
     type: DataTypes.INTEGER,
