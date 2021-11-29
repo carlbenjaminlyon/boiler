@@ -11,7 +11,7 @@ import Weather from './Weather.jsx';
 import Events from './Events.jsx';
 import GoogleSignIn from './GoogleSignIn.jsx';
 import Search from './Search.jsx';
-// import RestaurantList from './RestaurantList.jsx';
+import RestaurantList from './RestaurantList.jsx';
 import user from './GoogleSignIn.jsx';
 
 import axios from 'axios';
@@ -84,7 +84,7 @@ const App = () => {
         </div>
         <div>
           <Container maxWidth="sm">
-            {/* <RestaurantList favorites={false}/> */}
+            <RestaurantList />
           </Container>
         </div>
         <div>

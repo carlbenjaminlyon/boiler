@@ -8,7 +8,7 @@ const key = require('../../../config/keys').yelp.APIkey;
 const Search = () => {
 
   const [ store, useStore ] = useState([]);
-  console.log('store', store[0]);
+
   const getCrawfish = () => {
     return axios.get('https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=neworleans&categories=crawfish', {
       headers: {
@@ -20,7 +20,7 @@ const Search = () => {
       .then((response) => response.data.businesses)
       .then((businesses) => { useStore(businesses)
         businesses.forEach((store) => {
-          axios.post('/api/restaurants', {title: store.name, price: store.price, address: store.location.address1, lat: store.coordinates.latitude, long: store.coordinates.longitude})
+          axios.post('/api/restaurants', {title: store.name, price: store.price, address: store.location.address1, lat: store.coordinates.latitude, long: store.coordinates.longitude, imageUrl: store.image_url})
             .then((res) => { console.log('Saved Restaurant' ); })
             .catch((err) => { console.log('Unable to save restaurant'); });
         });

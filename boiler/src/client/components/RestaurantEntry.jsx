@@ -5,6 +5,9 @@ import BookmarkAddOutlinedIcon from '@mui/icons-material/BookmarkAddOutlined';
 import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Card from '@mui/material/Card';
+import { CardActions } from '@material-ui/core';
+import { Tooltip } from '@material-ui/core';
 
 const RestaurantEntry = (props) => {
   // let initialIcon = BookmarkAddOutlinedIcon;
@@ -59,7 +62,7 @@ const RestaurantEntry = (props) => {
 
     <Card sx={{ maxWidth: 300 }}>
       <CardHeader
-        title="Some basic title"
+        title={title}
         subheader="November 24th, 2021" />
       <CardMedia
         component="img"
