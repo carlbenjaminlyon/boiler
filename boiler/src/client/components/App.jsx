@@ -51,6 +51,7 @@ const App = () => {
           <Typography variant='h4' color='textPrimary'>
             <Weather />
           </Typography>
+          <GoogleSignIn />
         </Toolbar>
       </AppBar>
       <main>
@@ -79,7 +80,7 @@ const App = () => {
         <div>
           <Container maxWidth="sm">
             <Typography variant='h5' color='textPrimary'>
-              <GoogleSignIn />
+
             </Typography>
           </Container>
         </div>
