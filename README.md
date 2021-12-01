@@ -21,7 +21,7 @@
 
 **Start Up**
 
-in ```/config folder, make a file named ```keys.js. This file needs the following info with your keys added.
+in /config folder, make a file named ```keys.js. This file needs the following info with your keys added.
 
 ```module.exports = {
   googleMaps: {
@@ -42,6 +42,6 @@ in ```/config folder, make a file named ```keys.js. This file needs the followin
 
 **Start Up Scripts**
 
-```npm run build:client-dev to run webpack
-```npm start to start the server on port 3000
+npm run build:client-dev to run webpack
+npm start to start the server on port 3000
 
