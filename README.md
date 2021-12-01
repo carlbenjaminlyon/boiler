@@ -40,7 +40,7 @@ The framework we used was React with React hooks.
 
 in /config folder, make a file named `keys.js'. This file needs the following info with your keys added.
 
-`module.exports = {
+```module.exports = {
   googleMaps: {
     APIkey: 'YOUR KEY'
   },
@@ -55,7 +55,7 @@ in /config folder, make a file named `keys.js'. This file needs the following in
   googleOAuth: {
     APIkey: 'YOUR KEY'
   }
-}`
+}```
 
 
 
