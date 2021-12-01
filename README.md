@@ -1,25 +1,25 @@
 # boiler
 
-#OverView
+**OverView**
 
 
 
-#Database
+**Database**
 
 
-#Server
+**Server**
 
 
-#Authentication
+**Authentication**
 
 
-#APIS
+**APIS**
 
-#Front End
+**Front End**
 
-#Styling
+**Styling**
 
-#Start Up
+**Start Up**
 
 in /config folder, make a file named keys.js. This file needs the following info with your keys added.
 
@@ -40,7 +40,7 @@ module.exports = {
   }
 }
 
-#Start Up Scripts
+**Start Up Scripts**
 
 npm run build:client-dev to run webpack
 npm start to start the server on port 3000
