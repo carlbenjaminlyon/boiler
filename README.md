@@ -11,13 +11,21 @@
 
 
 **Authentication**
-
+Our authentication was done using oauth and passport. We have a google strategy set up so users must log in with their google account. Once logged in, the user has access to the whole site. 
 
 **APIS**
+
+We used two external apis for this project:
+
+1. Yelp Fusion Api -
+ https://www.yelp.com/developers/documentation/v3/get_started
+ This allows us to search for restaurants in the category 'Crawfish' by location.
 
 **Front End**
 
 **Styling**
+
+We used Material UI for our styling.
 
 **Start Up**
 
