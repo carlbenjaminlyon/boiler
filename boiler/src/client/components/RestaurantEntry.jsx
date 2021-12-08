@@ -66,23 +66,23 @@ const RestaurantEntry = (props) => {
     <Card sx={{ maxWidth: 600 }}>
       <CardHeader
         title={title}
-        subheader="November 24th, 2021" />
+      />
       <CardMedia
         component="img"
         height="194"
         image={imageUrl}
-        alt=""
+        alt="picture of a restaurant"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           This is just some text in the typography field to fill in the space while we figure out whats next.
         </Typography>
         <Typography>Address: {address}</Typography>
-        <Typography>Price: ${price}</Typography>
+        <Typography>Price: {price}</Typography>
         <Typography>Yelp Rating:{yelpRating}</Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <Tooltip title="Remove from Favorites" placement ="right-start" arrow onClick={handleClick}>
+        <Tooltip title="Toggle Favorites" placement ="right-start" arrow onClick={handleClick}>
           {
             props.isFavorite
               ? (

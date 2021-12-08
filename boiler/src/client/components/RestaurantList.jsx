@@ -17,7 +17,6 @@ const RestaurantList = (props) => {
   const getRestaurants = () => {
     axios.get('/api/restaurants')
       .then((results) => {
-        console.log('results', results.data);
         setRestaurants(results.data);
       })
       .catch(err => {
@@ -46,19 +45,19 @@ const RestaurantList = (props) => {
   };
 
 
-  // const getFavorites = () => {
-  //   axios.get('/api/favorites/', {email: currentUser.email})
-  //     .then(results => setFavorites(results))
-  //     .catch(err => console.error(err));
-  // };
+  const getFavorites = () => {
+    axios.get('/api/favorites/', {email: currentUser.email})
+      .then(results => setFavorites(results))
+      .catch(err => console.error(err));
+  };
 
   useEffect(() => {
     getCrawfish();
-    // getRestaurants();
+    getRestaurants();
+    getFavorites();
   }, []);
 
   const array = props.favorites ? favorites : restaurants;
-  console.log('from restaurants', restaurants);
   return (
     <div>
       <h2>Restaurants in the Area</h2>
@@ -69,7 +68,7 @@ const RestaurantList = (props) => {
           justify="center"
         >
           {
-            !!restaurants && restaurants.map(store => {
+            !!array && array.map(store => {
               return (
                 <Grid item xs={12} sm={6} md={4} zeroMinWidth={0}>
                   <RestaurantEntry restaurant={store} key={store.id} isFavorite={favorites.includes(store)}/>

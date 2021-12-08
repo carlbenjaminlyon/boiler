@@ -164,11 +164,11 @@ app.put('/api/restaurants', (req, res) => {
 // updates user's location
 // Body must have properties: lat and long
 // ID in params is UserID
-app.put('/api/users/:id', (req, res) => {
-  const {lat, long} = req.body;
+app.put('/api/users/', (req, res) => {
+  const {lat, long, email} = req.body;
   User.update({lat: lat, long: long}, {
     where: {
-      id: req.params.id
+      email: email
     }
   })
     .then(() => {
