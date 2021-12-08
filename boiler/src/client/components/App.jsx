@@ -13,7 +13,7 @@ import GoogleSignIn from './GoogleSignIn.jsx';
 import Search from './Search.jsx';
 import RestaurantList from './RestaurantList.jsx';
 import user from './GoogleSignIn.jsx';
-import Login from './Login.jsx';
+import Profile from './Profile.jsx';
 import axios from 'axios';
 
 
@@ -65,9 +65,6 @@ const App = () => {
         </div>
 
 
-        ​for (let i = 0; i < str.length; i++) {
-      findAnagram(str.slice(0, i) + str.slice(i + 1), anagram + str[i])​;
-    }
         <div>
           <Container maxWidth="sm">
             <Typography variant='h4' color='textPrimary'>

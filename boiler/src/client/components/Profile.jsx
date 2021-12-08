@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSharedUser } from './User.jsx';
-import RestaurantList from './RestaurantList';
+import RestaurantList from './RestaurantList.jsx';
 import axios from 'axios';
 
 
