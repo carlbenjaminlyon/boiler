@@ -20,16 +20,15 @@ import axios from 'axios';
 //Context
 import { useSharedUser } from './User.jsx';
 
-
 const App = () => {
 
   const { currentUser, changeCurrentUser } = useSharedUser();
-  console.log('currentUser from app', currentUser);
+  const { signedIn, setSignedIn } = useState(false);
+
 
   //Check if user exists in DB
   //If yes, get their restaurants
   //If not, create db entry for them
-
 
 
   return (
@@ -54,11 +53,11 @@ const App = () => {
           <GoogleSignIn />
         </Toolbar>
       </AppBar>
-      <main>
+      <main style={{'margin-top': '180px'}}>
         <div>
           <Container maxWidth="sm">
             <Typography variant='h4' color='textPrimary'>
-            {/* <Search /> */}
+              {/* <Search /> */}
 
             </Typography>
           </Container>
@@ -80,7 +79,7 @@ const App = () => {
         <div>
           <Container maxWidth="sm">
             <Typography variant='h5' color='textPrimary'>
-
+              {/* <Profile /> */}
             </Typography>
           </Container>
         </div>

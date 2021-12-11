@@ -8,6 +8,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Card from '@mui/material/Card';
 import { CardActions } from '@material-ui/core';
 import { Tooltip } from '@material-ui/core';
+import { shadows } from '@mui/system';
 
 import { useSharedUser } from './User.jsx';
 
@@ -63,7 +64,7 @@ const RestaurantEntry = (props) => {
 
   return (
 
-    <Card sx={{ maxWidth: 600 }}>
+    <Card sx={{ maxWidth: 600, boxShadow: 10}}>
       <CardHeader
         title={title}
       />

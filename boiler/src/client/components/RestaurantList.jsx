@@ -46,7 +46,7 @@ const RestaurantList = (props) => {
 
 
   const getFavorites = () => {
-    axios.get('/api/favorites/', {email: currentUser.email})
+    axios.post('/api/favorites/', {email: currentUser.email})
       .then(results => setFavorites(results))
       .catch(err => console.error(err));
   };
@@ -54,7 +54,7 @@ const RestaurantList = (props) => {
   useEffect(() => {
     getCrawfish();
     getRestaurants();
-    getFavorites();
+    // getFavorites();
   }, []);
 
   const array = props.favorites ? favorites : restaurants;

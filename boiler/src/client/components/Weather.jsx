@@ -16,15 +16,9 @@ const Weather = () => {
 
   //api expects two digit number to represent icon filename
   const padNum = (num) => {
-    const stringNum = num + '';
-    console.log(typeof stringNum);
-    const stringLength = stringNum.length;
+    const number = num.toString();
+    return number.length === 1 ? `0${number}` : number;
 
-    if (stringLength === 1) {
-      return '0' + stringNum; // 1 --> 01
-    } else {
-      return stringNum; // 12 --> 12
-    }
   };
   //Weather dates, today, tomorrow, 11/27, 11/28, etc
 
@@ -37,8 +31,8 @@ const Weather = () => {
           min: daily.Temperature.Minimum.Value,
           max: daily.Temperature.Maximum.Value,
           weatherType: daily.Day.IconPhrase,
-          weatherIcon: daily.Day.Icon,
-          // weatherIcon: padNum(daily.Day.Icon)
+          // weatherIcon: daily.Day.Icon,
+          weatherIcon: padNum(daily.Day.Icon)
         };
       })))
       .catch((err) => { console.log('Could not retrieve weather data', err); });

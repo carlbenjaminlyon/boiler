@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const Profile = (props) => {
   const { currentUser, changeCurrentUser } = useSharedUser();
+  console.log('from profile:', currentUser);
   const {name, email, lat, long, imageUrl } = currentUser;
   // const [location, setLocation] = useState({lat: currentUser.lat, long: currentUser.long});
   const [latitude, setLatitude] = useState(currentUser.lat);
@@ -55,3 +56,4 @@ const Profile = (props) => {
 };
 
 export default Profile;
+
